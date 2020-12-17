@@ -26,6 +26,9 @@ public class Profil {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+	public String affiche() {
+		return  "Profil [ID " + getId()+ " code "+getCode()+" libelle "+getLibelle()+ "]";
+	}
 	
 	
 	

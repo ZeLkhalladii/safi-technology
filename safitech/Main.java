@@ -11,8 +11,12 @@ public static void main(String[] args) {
 		boolean Quit = false;
 		Scanner scanner = new Scanner(System.in);
 		
+		int id = 1;
+		
 		ArrayList<Utilisateur> Userlist = new ArrayList<Utilisateur>();
 		ArrayList<Utilisateur> Managerlist = new ArrayList<Utilisateur>();
+		ArrayList<String> listOfProf = new ArrayList<>();
+		
 
 		while(Quit != true) {
 			System.out.println("1- utilisateurs");
@@ -33,7 +37,7 @@ public static void main(String[] args) {
 				switch(SelectUser) {
 						case 1:
 							Utilisateur utilisateur = new Utilisateur();
-							
+							Profil profil = new Profil();
 							
 							System.out.println("entrer votre profile: ");
 							System.out.println("1- Chef de projet (CP): ");
@@ -47,22 +51,27 @@ public static void main(String[] args) {
 							switch(SelectProfile) {
 								case 1:
 									utilisateur.setLogin("CP");
+									profil.setLibelle("CP");
 								break;
 								
 								case 2:
 									utilisateur.setLogin("MN");
+									profil.setLibelle("MN");
 								break;
 								
 								case 3:
 									utilisateur.setLogin("DP");
+									profil.setLibelle("DP");
 								break;
 								
 								case 4:
 									utilisateur.setLogin("DHR");
+									profil.setLibelle("DHR");
 								break;
 								
 								case 5:
 									utilisateur.setLogin("DG");
+									profil.setLibelle("DG");
 								break;
 								
 							}
@@ -111,11 +120,16 @@ public static void main(String[] args) {
 							}
 
 							Userlist.add(utilisateur);
+							
+							listOfProf.add("the id is : " + id + " profile : " + profil.getLibelle() + " \nthe user information : " + utilisateur.affiche());
+							
+							id++;
+							
 						break;
 						
 						case 2:
-							for(Utilisateur object:Userlist) {
-								System.out.println(object.affiche());
+							for(String list:listOfProf) {
+								System.out.println(list);
 							}
 						break;
 						
@@ -127,7 +141,26 @@ public static void main(String[] args) {
 				break;
 				
 				case 2:
-					System.out.println("tous les profiles\n");
+					
+
+					Profil profil = new Profil();
+					
+					profil.setId(id);
+
+					System.out.println("entrer votre code");
+					int code = scanner.nextInt();
+					profil.setCode(code);
+					
+					System.out.println("entrer votre libelle");
+					String libelle = scanner.next();
+					profil.setLibelle(libelle);
+					
+					Profilelist.add(profil);
+					
+					for(Profil object:Profilelist) {
+						System.out.println(object.affiche());
+					}                         
+				
 				break;
 				
 				case 3:

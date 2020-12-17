@@ -5,7 +5,7 @@ public class Utilisateur extends Personne{
 	private String login;
 	private String password;
 	private String service;
-	
+	private String profil;
 	//getters and setters 
 	
 	public String getLogin() {
@@ -30,10 +30,16 @@ public class Utilisateur extends Personne{
 	
 	
 	public String affiche() {
-		return "Utilisateur [profile : " + getLogin() + ", motDePass : " + getPassword() + ", service : " + getService()
-				+ ", getMatricule() : " + getMatricule() + ", getNom() : " + getNom() + ", getPrenom() : " + getPrenom()
-				+ ", getEmail() : " + getEmail() + ", getTelephone() : " + getTele() + ", getSalaire() : " + getSalair() + " DH"
+		return "Utilisateur [ mote De Passe : " + getPassword() + ", service : " + getService()
+				+ ", Matricule() : " + getMatricule() + ", Nom : " + getNom() + ", Prenom() : " + getPrenom()
+				+ ", Email() : " + getEmail() + ", Telephone() : " + getTele() + ", Salaire() : " + getSalair() + " DH"
 				+ "]";
+	}
+	public String getProfil() {
+		return profil;
+	}
+	public void setProfil(String profil) {
+		this.profil = profil;
 	}
 	
 
